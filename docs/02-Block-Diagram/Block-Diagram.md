@@ -11,3 +11,5 @@ The block diagram presents a low-level view of the rover’s electrical architec
 
 ## Block Diagram: Wireless Communication Subsystem
 ![Block Diagram: Wireless Communication Subsystem](DraftCommsCGE.png)
+
+> Block Diagram: view as a PDF [here](WirelessCommunicationSubsystem.pdf)
