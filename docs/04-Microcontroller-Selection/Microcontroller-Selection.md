@@ -152,3 +152,15 @@ Reference:
 |------------|--------|-------------|------|-------|
 | Status LED | TX Activity | 17 | GPIO9 | Output |
 | Status LED | BLE Connected | 18 | GPIO10 | Output |
+
+## Final Microcontroller Selection and Rationale
+
+After evaluating project requirements and available microcontroller options, the **ESP32-S3-WROOM-1** was selected as the final microcontroller for the Wireless Communication Subsystem.
+
+This subsystem requires reliable bidirectional communication between the HMI (via UART) and the rover’s local controller (via Bluetooth). The ESP32-S3 integrates both **Bluetooth (BLE and Classic)** and multiple hardware communication interfaces, including up to three UARTs and native USB support. This eliminates the need for external wireless modules and reduces overall system complexity.
+
+The dual-core 240 MHz processor provides sufficient computational headroom to manage concurrent UART communication, Bluetooth stack operation, and packet parsing without risking latency or dropped data. Additionally, the flexible GPIO matrix simplifies peripheral routing and supports iterative hardware revisions.
+
+Operating at 3.3 V, the ESP32-S3 is compatible with a switching buck regulator from the 9–12 V battery supply. Its cost-effective pricing and strong ecosystem support (ESP-IDF, Arduino core, extensive documentation) further reduce development risk.
+
+Based on wireless integration, communication flexibility, processing capability, cost, and ecosystem maturity, the ESP32-S3-WROOM-1 represents the optimal balance of performance and simplicity for this communications-focused design.
