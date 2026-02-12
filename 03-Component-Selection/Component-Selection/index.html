@@ -1232,40 +1232,12 @@
 <hr>
 <p>* The ESP32-S3 has multiple SPI interfaces, but one is used internally for flash.</p>
 <p>### ESP32-S3-WROOM-1 / 1U Pin Allocation Table</p>
-<table>
-<thead>
-<tr>
-<th>Peripheral</th>
-<th>Signal</th>
-<th>ESP32 Pin #</th>
-<th>GPIO</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Power</td>
-<td>3V3</td>
-<td>2</td>
-<td>3V3</td>
-<td>3.3V supply</td>
-</tr>
-<tr>
-<td>Power</td>
-<td>GND</td>
-<td>1, 40, EPAD</td>
-<td>GND</td>
-<td>Tie all grounds</td>
-</tr>
-<tr>
-<td>Enable</td>
-<td>EN</td>
-<td>3</td>
-<td>EN</td>
-<td>Pull-up required (10kΩ)</td>
-</tr>
-</tbody>
-</table>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../pinoutDiagram.png" data-desc-position="bottom"><img alt="ESP32-S3-WROOM-1 / 1U Pin Allocation Image" src="../pinoutDiagram.png"></a>
+| Peripheral | Signal | ESP32 Pin # | GPIO | Notes |
+|------------|--------|-------------|------|-------|
+| Power | 3V3 | 2 | 3V3 | 3.3V supply |
+| Power | GND | 1, 40, EPAD | GND | Tie all grounds |
+| Enable | EN | 3 | EN | Pull-up required (10kΩ) |</p>
 <h4 id="uart-to-hmi">UART to HMI</h4>
 <table>
 <thead>
