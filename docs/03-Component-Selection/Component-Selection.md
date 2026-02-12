@@ -44,7 +44,7 @@ For more details, review the ["Appendix - Component Selection Process - Power Ma
 
 ## Project-Specific Peripheral and Pin Requirements
 
-To determine hardware compatibility and ensure sufficient I/O availability, the required peripherals and total pin count for the Communications Gateway subsystem were analyzed. The ESP32-S3-WROOM-1 module will serve as a communication bridge between the HMI (via UART) and the rover’s local communications ESP32 (via Bluetooth).
+To determine hardware compatibility and confirm sufficient I/O availability, the required peripherals and total pin count for the Wireless Communication Subsystem were checked. The ESP32-S3-WROOM-1 module will serve as a communication bridge between the HMI (via UART) and the rover’s local communications ESP32 (via Bluetooth).
 
 ### Required Communication Interfaces
 
@@ -104,7 +104,7 @@ To determine hardware compatibility and ensure sufficient I/O availability, the 
 
 This analysis confirms that the ESP32-S3-WROOM-1 module provides sufficient peripheral interfaces and GPIO availability to support the communications subsystem requirements.
 
-## Microcontroller 
+## Microcontroller (ESP32)
 
 | Parameter|Specification|
 | --------------------------------------------- | -------------------------------------------- |
@@ -144,7 +144,25 @@ This analysis confirms that the ESP32-S3-WROOM-1 module provides sufficient peri
 
 ## Subsystem Role and Responsibilities
 
-As the communications subsystem lead, my primary role on the team is to design and implement the gateway interface between the Human-Machine Interface (HMI) and the rover’s distributed control architecture. My ESP32-S3 module serves as a communication bridge, receiving user commands from the HMI via UART and transmitting them wirelessly to the rover’s local communications ESP32 using Bluetooth. In the reverse direction, my subsystem receives telemetry data from the rover’s daisy-chained sensor network and forwards relevant information back to the HMI for display. While my subsystem does not directly perform sensing or actuation, it is responsible for reliable transport of sensor data and control signals between systems. My responsibilities include selecting and configuring UART and Bluetooth interfaces, defining packet structure and data framing, ensuring signal integrity and voltage compatibility, managing power requirements for the communication hardware, and implementing error detection and recovery mechanisms. Overall, my role ensures robust, low-latency, and reliable bidirectional communication between the operator interface and the rover subsystems.
+As the Wireless Communication Subsystem lead, my primary role on the team is to design and implement the gateway interface between the Human-Machine Interface (HMI) and the rover’s distributed control architecture. My ESP32-S3 module serves as a communication bridge, receiving user commands from the HMI via UART and transmitting them wirelessly to the rover’s local communications ESP32 using Bluetooth. In the reverse direction, my subsystem receives telemetry data from the rover’s daisy-chained sensor network and forwards relevant information back to the HMI for display. While my subsystem does not directly perform sensing or actuation, it is responsible for reliable transport of sensor data and control signals between systems. My responsibilities include selecting and configuring UART and Bluetooth interfaces, defining packet structure and data framing, verifying signal integrity and voltage compatibility, managing power requirements for the communication hardware, and implementing error detection and recovery features. Overall, my role is to make sure my system is robust, low-latency, and a reliable bidirectional communication between the operator interface and the rover subsystems.
+
+## Worked-Out Communication Examples
+
+### 1. BLE GATT Communication (ESP32 ↔ ESP32)
+
+A BLE GATT server/client example was reviewed to verify compatibility between two ESP32 devices using Bluetooth Low Energy. In this configuration, one ESP32 acts as a GATT server (advertising telemetry data), while the other acts as a GATT client (connecting, subscribing to notifications, and sending commands). This confirms bidirectional wireless communication using the ESP32-S3 BLE stack.
+
+Reference:
+[Example 1 Link](https://randomnerdtutorials.com/esp32-ble-server-client/)
+
+---
+
+### 2. Bluetooth Classic Serial Port Profile (SPP)
+
+A Bluetooth Classic SPP example was reviewed to evaluate transparent serial communication between two ESP32 boards. This approach allows one ESP32 to function as a wireless serial bridge, replacing a physical UART connection. The example demonstrates reliable data transmission between devices using the ESP-IDF Bluetooth SPP API.
+
+Reference:
+[Example 2 Link](https://github.com/nopnop2002/esp-idf-Bluetooth-SPP)
 
  ## ESP32-S3-WROOM-1 / 1U Pin Allocation Tables
  
