@@ -865,6 +865,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#final-microcontroller-selection-and-rationale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final Microcontroller Selection and Rationale
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1162,6 +1171,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-microcontroller-selection-and-rationale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final Microcontroller Selection and Rationale
+    </span>
+  </a>
   
 </li>
       
@@ -1571,6 +1589,12 @@
 </tr>
 </tbody>
 </table>
+<h2 id="final-microcontroller-selection-and-rationale">Final Microcontroller Selection and Rationale</h2>
+<p>After evaluating project requirements and available microcontroller options, the <strong>ESP32-S3-WROOM-1</strong> was selected as the final microcontroller for the Wireless Communication Subsystem.</p>
+<p>This subsystem requires reliable bidirectional communication between the HMI (via UART) and the rover’s local controller (via Bluetooth). The ESP32-S3 integrates both <strong>Bluetooth (BLE and Classic)</strong> and multiple hardware communication interfaces, including up to three UARTs and native USB support. This eliminates the need for external wireless modules and reduces overall system complexity.</p>
+<p>The dual-core 240 MHz processor provides sufficient computational headroom to manage concurrent UART communication, Bluetooth stack operation, and packet parsing without risking latency or dropped data. Additionally, the flexible GPIO matrix simplifies peripheral routing and supports iterative hardware revisions.</p>
+<p>Operating at 3.3 V, the ESP32-S3 is compatible with a switching buck regulator from the 9–12 V battery supply. Its cost-effective pricing and strong ecosystem support (ESP-IDF, Arduino core, extensive documentation) further reduce development risk.</p>
+<p>Based on wireless integration, communication flexibility, processing capability, cost, and ecosystem maturity, the ESP32-S3-WROOM-1 represents the optimal balance of performance and simplicity for this communications-focused design.</p>
 
 
 
