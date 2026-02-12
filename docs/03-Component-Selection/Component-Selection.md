@@ -79,9 +79,9 @@ For more details, review the ["Appendix - Component Selection Process - Actuator
 | Code Examples | [ESP-IDF Examples](https://github.com/espressif/esp-idf/tree/master/examples), [Arduino ESP32 Core](https://github.com/espressif/arduino-esp32) |
 | External Resources URL(s) | [Random Nerd Tutorials – ESP32-S3](https://randomnerdtutorials.com/), [Espressif YouTube Channel](https://www.youtube.com/@EspressifSystems) |
 | Unit cost | ~$5.06 USD (qty 1) |
-Supply Voltage Range | 3.0 – 3.6 V (Nominal 3.3 V), Absolute Max 3.6 V
-Maximum GPIO current (per pin) | 40 mA source, 28 mA sink
-Absolute Maximum Current (entire IC) | Not explicitly specified; external supply up to 0.5 A (recommended)|
+|Supply Voltage Range | 3.0 – 3.6 V (Nominal 3.3 V), Absolute Max 3.6 V|
+|Maximum GPIO current (per pin) | 40 mA source, 28 mA sink|
+|Absolute Maximum Current (entire IC) | Not explicitly specified; external supply up to 0.5 A (recommended)|
 | Supports External Interrupts? | Yes |
 | Required Programming Hardware, Cost, URL | USB cable (native USB supported) or 3.3V USB-to-UART adapter (~$10) |
 
@@ -104,9 +104,14 @@ Absolute Maximum Current (entire IC) | Not explicitly specified; external supply
 
 \* The ESP32-S3 has multiple SPI interfaces, but one is used internally for flash.
 
- ### ESP32-S3-WROOM-1 / 1U Pin Allocation Table
+### Subsystem Role and Responsibilities
+
+As the communications subsystem lead, my primary role on the team is to design and implement the gateway interface between the Human-Machine Interface (HMI) and the rover’s distributed control architecture. My ESP32-S3 module serves as a communication bridge, receiving user commands from the HMI via UART and transmitting them wirelessly to the rover’s local communications ESP32 using Bluetooth. In the reverse direction, my subsystem receives telemetry data from the rover’s daisy-chained sensor network and forwards relevant information back to the HMI for display. While my subsystem does not directly perform sensing or actuation, it is responsible for reliable transport of sensor data and control signals between systems. My responsibilities include selecting and configuring UART and Bluetooth interfaces, defining packet structure and data framing, ensuring signal integrity and voltage compatibility, managing power requirements for the communication hardware, and implementing error detection and recovery mechanisms. Overall, my role ensures robust, low-latency, and reliable bidirectional communication between the operator interface and the rover subsystems.
+
+ ### ESP32-S3-WROOM-1 / 1U Pin Allocation Tables
  
 ![ESP32-S3-WROOM-1 / 1U Pin Allocation Image](pinoutDiagram.png)
+
 | Peripheral | Signal | ESP32 Pin # | GPIO | Notes |
 |------------|--------|-------------|------|-------|
 | Power | 3V3 | 2 | 3V3 | 3.3V supply |
