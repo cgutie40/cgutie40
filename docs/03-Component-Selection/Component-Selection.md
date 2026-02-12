@@ -105,7 +105,8 @@ Absolute Maximum Current (entire IC) | Not explicitly specified; external supply
 \* The ESP32-S3 has multiple SPI interfaces, but one is used internally for flash.
 
  ### ESP32-S3-WROOM-1 / 1U Pin Allocation Table
-
+ 
+![ESP32-S3-WROOM-1 / 1U Pin Allocation Image](pinoutDiagram.png)
 | Peripheral | Signal | ESP32 Pin # | GPIO | Notes |
 |------------|--------|-------------|------|-------|
 | Power | 3V3 | 2 | 3V3 | 3.3V supply |
