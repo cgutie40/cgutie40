@@ -68,9 +68,6 @@ For more details, review the ["Appendix - Component Selection Process - Actuator
 
 ## Microcontroller Selection
 
-
-
-
 | Parameter|Specification|
 | --------------------------------------------- | -------------------------------------------- |
 | Model | ESP32-S3-WROOM-1-N4 |
@@ -106,7 +103,37 @@ Absolute Maximum Current (entire IC) | Not explicitly specified; external supply
 ---
 
 \* The ESP32-S3 has multiple SPI interfaces, but one is used internally for flash.
- 
+
+ ### ESP32-S3-WROOM-1 / 1U Pin Allocation Table
+
+| Peripheral | Signal | ESP32 Pin # | GPIO | Notes |
+|------------|--------|-------------|------|-------|
+| Power | 3V3 | 2 | 3V3 | 3.3V supply |
+| Power | GND | 1, 40, EPAD | GND | Tie all grounds |
+| Enable | EN | 3 | EN | Pull-up required (10kΩ) |
+
+#### UART to HMI
+
+| Peripheral | Signal | ESP32 Pin # | GPIO | Notes |
+|------------|--------|-------------|------|-------|
+| UART1 | TX → HMI RX | 15 | GPIO3 | Safe GPIO |
+| UART1 | RX ← HMI TX | 16 | GPIO46 | Input-only pin (good for RX) |
+
+#### USB Programming (Native USB)
+
+| Peripheral | Signal | ESP32 Pin # | GPIO | Notes |
+|------------|--------|-------------|------|-------|
+| USB | D+ | 37 | U0TXD | Native USB function |
+| USB | D− | 36 | U0RXD | Native USB function |
+
+#### Status LEDs
+
+| Peripheral | Signal | ESP32 Pin # | GPIO | Notes |
+|------------|--------|-------------|------|-------|
+| Status LED | TX Activity | 17 | GPIO9 | Output |
+| Status LED | BLE Connected | 18 | GPIO10 | Output |
+
+
 
 
 
