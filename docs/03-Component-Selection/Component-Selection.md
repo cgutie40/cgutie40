@@ -63,3 +63,51 @@ For more details, review the ["Appendix - Component Selection Process - Actuator
     | Meets surface mount constraint of project |
 
 **Rationale:** A clock oscillator is easier ...
+
+
+
+## Microcontroller Selection
+
+
+
+
+| Parameter|Specification|
+| --------------------------------------------- | -------------------------------------------- |
+| Model | ESP32-S3-WROOM-1-N4 |
+| Product Page URL | [ESP32-S3-WROOM-1 Product Page](https://www.espressif.com/en/products/modules/esp32-s3-wroom-1) |
+| ESP32-S3-WROOM-1-N4 Datasheet URL | [ESP32-S3-WROOM-1 Datasheet](https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf) |
+| ESP32 S3 Datasheet URL | [ESP32-S3 Datasheet](https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf) |
+| ESP32 S3 Technical Reference Manual URL | [ESP32-S3 Technical Reference Manual](https://www.espressif.com/sites/default/files/documentation/esp32-s3_technical_reference_manual_en.pdf) |
+| Vendor link | [Digikey – ESP32-S3-WROOM-1-N4](https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3-WROOM-1-N4/16162639) |
+| Code Examples | [ESP-IDF Examples](https://github.com/espressif/esp-idf/tree/master/examples), [Arduino ESP32 Core](https://github.com/espressif/arduino-esp32) |
+| External Resources URL(s) | [Random Nerd Tutorials – ESP32-S3](https://randomnerdtutorials.com/), [Espressif YouTube Channel](https://www.youtube.com/@EspressifSystems) |
+| Unit cost | ~$4–$7 USD (qty 1) |
+| Absolute Maximum Current for entire IC | ? |
+| Supply Voltage Range | 3.0V – 3.6V (Nominal 3.3V, Absolute Max 3.6V) |
+| Absolute Maximum current (for entire IC) | ? |
+| Maximum GPIO current (per pin) | 40 mA (absolute max), recommended ≤ 20 mA |
+| Supports External Interrupts? | Yes |
+| Required Programming Hardware, Cost, URL | USB cable (native USB supported) or 3.3V USB-to-UART adapter (~$10) |
+
+---
+
+| Module | # Available | Needed | Associated Pins (or * for any) |
+| -------------- | ----------- | ------ | ------------------------------ |
+| UART | 3 | ? | * (GPIO matrix) |
+| external SPI* | 2 (SPI2, SPI3) | ? | * (GPIO matrix) |
+| I2C | 2 | ? | * (GPIO matrix) |
+| GPIO | Up to 45 (module exposes fewer) | ? | GPIO0–GPIO48 (see module pinout) |
+| ADC | 2 units, up to 20 channels (module dependent) | ? | ADC-capable GPIOs only |
+| LED PWM | 8 channels (LEDC) | ? | * |
+| Motor PWM | 2 MCPWM units | ? | * |
+| USB Programmer | 1 (native USB OTG) | 1 | USB D+ / D− pins |
+| WiFi | 1 | ? | Internal |
+| Bluetooth LE | 1 | ? | Internal |
+
+---
+
+\* The ESP32-S3 has multiple SPI interfaces, but one is used internally for flash.
+ 
+
+
+
