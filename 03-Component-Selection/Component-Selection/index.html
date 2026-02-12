@@ -653,6 +653,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#microcontroller-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Microcontroller Selection
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -901,6 +910,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#microcontroller-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Microcontroller Selection
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1005,6 +1023,152 @@
 </li>
 </ol>
 <p><strong>Rationale:</strong> A clock oscillator is easier ...</p>
+<h2 id="microcontroller-selection">Microcontroller Selection</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Specification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model</td>
+<td>ESP32-S3-WROOM-1-N4</td>
+</tr>
+<tr>
+<td>Product Page URL</td>
+<td><a href="https://www.espressif.com/en/products/modules/esp32-s3-wroom-1">ESP32-S3-WROOM-1 Product Page</a></td>
+</tr>
+<tr>
+<td>ESP32-S3-WROOM-1-N4 Datasheet URL</td>
+<td><a href="https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf">ESP32-S3-WROOM-1 Datasheet</a></td>
+</tr>
+<tr>
+<td>ESP32 S3 Datasheet URL</td>
+<td><a href="https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf">ESP32-S3 Datasheet</a></td>
+</tr>
+<tr>
+<td>ESP32 S3 Technical Reference Manual URL</td>
+<td><a href="https://www.espressif.com/sites/default/files/documentation/esp32-s3_technical_reference_manual_en.pdf">ESP32-S3 Technical Reference Manual</a></td>
+</tr>
+<tr>
+<td>Vendor link</td>
+<td><a href="https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3-WROOM-1-N4/16162639">Digikey – ESP32-S3-WROOM-1-N4</a></td>
+</tr>
+<tr>
+<td>Code Examples</td>
+<td><a href="https://github.com/espressif/esp-idf/tree/master/examples">ESP-IDF Examples</a>, <a href="https://github.com/espressif/arduino-esp32">Arduino ESP32 Core</a></td>
+</tr>
+<tr>
+<td>External Resources URL(s)</td>
+<td><a href="https://randomnerdtutorials.com/">Random Nerd Tutorials – ESP32-S3</a>, <a href="https://www.youtube.com/@EspressifSystems">Espressif YouTube Channel</a></td>
+</tr>
+<tr>
+<td>Unit cost</td>
+<td>~<span class="arithmatex">\(4–\)</span>7 USD (qty 1)</td>
+</tr>
+<tr>
+<td>Absolute Maximum Current for entire IC</td>
+<td>?</td>
+</tr>
+<tr>
+<td>Supply Voltage Range</td>
+<td>3.0V – 3.6V (Nominal 3.3V, Absolute Max 3.6V)</td>
+</tr>
+<tr>
+<td>Absolute Maximum current (for entire IC)</td>
+<td>?</td>
+</tr>
+<tr>
+<td>Maximum GPIO current (per pin)</td>
+<td>40 mA (absolute max), recommended ≤ 20 mA</td>
+</tr>
+<tr>
+<td>Supports External Interrupts?</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Required Programming Hardware, Cost, URL</td>
+<td>USB cable (native USB supported) or 3.3V USB-to-UART adapter (~$10)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th># Available</th>
+<th>Needed</th>
+<th>Associated Pins (or * for any)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UART</td>
+<td>3</td>
+<td>?</td>
+<td>* (GPIO matrix)</td>
+</tr>
+<tr>
+<td>external SPI*</td>
+<td>2 (SPI2, SPI3)</td>
+<td>?</td>
+<td>* (GPIO matrix)</td>
+</tr>
+<tr>
+<td>I2C</td>
+<td>2</td>
+<td>?</td>
+<td>* (GPIO matrix)</td>
+</tr>
+<tr>
+<td>GPIO</td>
+<td>Up to 45 (module exposes fewer)</td>
+<td>?</td>
+<td>GPIO0–GPIO48 (see module pinout)</td>
+</tr>
+<tr>
+<td>ADC</td>
+<td>2 units, up to 20 channels (module dependent)</td>
+<td>?</td>
+<td>ADC-capable GPIOs only</td>
+</tr>
+<tr>
+<td>LED PWM</td>
+<td>8 channels (LEDC)</td>
+<td>?</td>
+<td>*</td>
+</tr>
+<tr>
+<td>Motor PWM</td>
+<td>2 MCPWM units</td>
+<td>?</td>
+<td>*</td>
+</tr>
+<tr>
+<td>USB Programmer</td>
+<td>1 (native USB OTG)</td>
+<td>1</td>
+<td>USB D+ / D− pins</td>
+</tr>
+<tr>
+<td>WiFi</td>
+<td>1</td>
+<td>?</td>
+<td>Internal</td>
+</tr>
+<tr>
+<td>Bluetooth LE</td>
+<td>1</td>
+<td>?</td>
+<td>Internal</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>* The ESP32-S3 has multiple SPI interfaces, but one is used internally for flash.</p>
 
 
 
