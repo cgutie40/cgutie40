@@ -664,6 +664,16 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#subsystem-role-and-responsibilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subsystem Role and Responsibilities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subsystem Role and Responsibilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#uart-to-hmi" class="md-nav__link">
     <span class="md-ellipsis">
       UART to HMI
@@ -687,6 +697,11 @@
       Status LEDs
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -954,6 +969,16 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#subsystem-role-and-responsibilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subsystem Role and Responsibilities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subsystem Role and Responsibilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#uart-to-hmi" class="md-nav__link">
     <span class="md-ellipsis">
       UART to HMI
@@ -977,6 +1002,11 @@
       Status LEDs
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1231,13 +1261,44 @@
 </table>
 <hr>
 <p>* The ESP32-S3 has multiple SPI interfaces, but one is used internally for flash.</p>
-<p>### ESP32-S3-WROOM-1 / 1U Pin Allocation Table</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../pinoutDiagram.png" data-desc-position="bottom"><img alt="ESP32-S3-WROOM-1 / 1U Pin Allocation Image" src="../pinoutDiagram.png"></a>
-| Peripheral | Signal | ESP32 Pin # | GPIO | Notes |
-|------------|--------|-------------|------|-------|
-| Power | 3V3 | 2 | 3V3 | 3.3V supply |
-| Power | GND | 1, 40, EPAD | GND | Tie all grounds |
-| Enable | EN | 3 | EN | Pull-up required (10kΩ) |</p>
+<h3 id="subsystem-role-and-responsibilities">Subsystem Role and Responsibilities</h3>
+<p>As the communications subsystem lead, my primary role on the team is to design and implement the gateway interface between the Human-Machine Interface (HMI) and the rover’s distributed control architecture. My ESP32-S3 module serves as a communication bridge, receiving user commands from the HMI via UART and transmitting them wirelessly to the rover’s local communications ESP32 using Bluetooth. In the reverse direction, my subsystem receives telemetry data from the rover’s daisy-chained sensor network and forwards relevant information back to the HMI for display. While my subsystem does not directly perform sensing or actuation, it is responsible for reliable transport of sensor data and control signals between systems. My responsibilities include selecting and configuring UART and Bluetooth interfaces, defining packet structure and data framing, ensuring signal integrity and voltage compatibility, managing power requirements for the communication hardware, and implementing error detection and recovery mechanisms. Overall, my role ensures robust, low-latency, and reliable bidirectional communication between the operator interface and the rover subsystems.</p>
+<p>### ESP32-S3-WROOM-1 / 1U Pin Allocation Tables</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../pinoutDiagram.png" data-desc-position="bottom"><img alt="ESP32-S3-WROOM-1 / 1U Pin Allocation Image" src="../pinoutDiagram.png"></a></p>
+<table>
+<thead>
+<tr>
+<th>Peripheral</th>
+<th>Signal</th>
+<th>ESP32 Pin #</th>
+<th>GPIO</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Power</td>
+<td>3V3</td>
+<td>2</td>
+<td>3V3</td>
+<td>3.3V supply</td>
+</tr>
+<tr>
+<td>Power</td>
+<td>GND</td>
+<td>1, 40, EPAD</td>
+<td>GND</td>
+<td>Tie all grounds</td>
+</tr>
+<tr>
+<td>Enable</td>
+<td>EN</td>
+<td>3</td>
+<td>EN</td>
+<td>Pull-up required (10kΩ)</td>
+</tr>
+</tbody>
+</table>
 <h4 id="uart-to-hmi">UART to HMI</h4>
 <table>
 <thead>
