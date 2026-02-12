@@ -81,7 +81,7 @@ For more details, review the ["Appendix - Component Selection Process - Actuator
 | Vendor link | [Digikey – ESP32-S3-WROOM-1-N4](https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3-WROOM-1-N4/16162639) |
 | Code Examples | [ESP-IDF Examples](https://github.com/espressif/esp-idf/tree/master/examples), [Arduino ESP32 Core](https://github.com/espressif/arduino-esp32) |
 | External Resources URL(s) | [Random Nerd Tutorials – ESP32-S3](https://randomnerdtutorials.com/), [Espressif YouTube Channel](https://www.youtube.com/@EspressifSystems) |
-| Unit cost | ~$4–$7 USD (qty 1) |
+| Unit cost | ~$5.06 USD (qty 1) |
 | Absolute Maximum Current for entire IC | ? |
 | Supply Voltage Range | 3.0V – 3.6V (Nominal 3.3V, Absolute Max 3.6V) |
 | Absolute Maximum current (for entire IC) | ? |
@@ -93,16 +93,16 @@ For more details, review the ["Appendix - Component Selection Process - Actuator
 
 | Module | # Available | Needed | Associated Pins (or * for any) |
 | -------------- | ----------- | ------ | ------------------------------ |
-| UART | 3 | ? | * (GPIO matrix) |
-| external SPI* | 2 (SPI2, SPI3) | ? | * (GPIO matrix) |
-| I2C | 2 | ? | * (GPIO matrix) |
-| GPIO | Up to 45 (module exposes fewer) | ? | GPIO0–GPIO48 (see module pinout) |
-| ADC | 2 units, up to 20 channels (module dependent) | ? | ADC-capable GPIOs only |
-| LED PWM | 8 channels (LEDC) | ? | * |
-| Motor PWM | 2 MCPWM units | ? | * |
-| USB Programmer | 1 (native USB OTG) | 1 | USB D+ / D− pins |
-| WiFi | 1 | ? | Internal |
-| Bluetooth LE | 1 | ? | Internal |
+| UART | 3 | 1 | Any GPIO via matrix (TX/RX) |
+| external SPI* | 2 (SPI2, SPI3) | 0 | * |
+| I2C | 2 | 0 | * |
+| GPIO | Up to 45 (module exposes fewer) | 2–4 | Status LEDs / control lines |
+| ADC | 2 units | 0 | - |
+| LED PWM | 8 channels (LEDC) | 0–1 | Status LED |
+| Motor PWM | 2 MCPWM units | 0 | - |
+| USB Programmer | 1 (native USB OTG) | 1 | USB D+ / D− |
+| WiFi | 1 | 0 | Internal |
+| Bluetooth LE | 1 | 1 | Internal |
 
 ---
 
